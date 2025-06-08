@@ -1,0 +1,164 @@
+@inproceedings{SafeUse,
+author = {Evans, Ana Nora and Campbell, Bradford and Soffa, Mary Lou},
+title = {Is rust used safely by software developers?},
+year = {2020},
+isbn = {9781450371216},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3377811.3380413},
+doi = {10.1145/3377811.3380413},
+abstract = {Rust, an emerging programming language with explosive growth, provides a robust type system that enables programmers to write memory-safe and data-race free code. To allow access to a machine's hardware and to support low-level performance optimizations, a second language, Unsafe Rust, is embedded in Rust. It contains support for operations that are difficult to statically check, such as C-style pointers for access to arbitrary memory locations and mutable global variables. When a program uses these features, the compiler is unable to statically guarantee the safety properties Rust promotes. In this work, we perform a large-scale empirical study to explore how software developers are using Unsafe Rust in real-world Rust libraries and applications. Our results indicate that software engineers use the keyword unsafe in less than 30\% of Rust libraries, but more than half cannot be entirely statically checked by the Rust compiler because of Unsafe Rust hidden somewhere in a library's call chain. We conclude that although the use of the keyword unsafe is limited, the propagation of unsafeness offers a challenge to the claim of Rust as a memory-safe language. Furthermore, we recommend changes to the Rust compiler and to the central Rust repository's interface to help Rust software developers be aware of when their Rust code is unsafe.},
+booktitle = {Proceedings of the ACM/IEEE 42nd International Conference on Software Engineering},
+pages = {246–257},
+numpages = {12},
+location = {Seoul, South Korea},
+series = {ICSE '20}
+}
+
+@inproceedings{Dual,
+author = {Zhang, Yuchen and Kundu, Ashish and Portokalidis, Georgios and Xu, Jun},
+title = {On the Dual Nature of Necessity in Use of Rust Unsafe Code},
+year = {2023},
+isbn = {9798400703270},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3611643.3613878},
+doi = {10.1145/3611643.3613878},
+abstract = {Rust offers both safety guarantees and high performance. Thus, it has gained significant popularity in the industry. To extend its capability as a system programming language, Rust allows unsafe blocks where the execution has low-level controls but loses the safety guarantees. In principle, unsafe blocks should only be used when necessary. However, preliminary evidence shows a different situation. This paper aims to establish a deeper view of this matter and bring endeavors toward improvement.
+
+We first present a study on the use of unsafe Rust in practice. We manually inspected 5946 unsafe blocks from 140 popular libraries and applications, focusing on whether the use of unsafe code is necessary (precisely, whether they have safe alternatives). The study unveils hundreds of instances of unnecessary unsafe Rust code and provides a taxonomy together with detailed analyses. These results complement our understanding and offer insights for the community to make a change.
+
+Following the study, we further summarize nine popular patterns of unnecessary unsafe blocks and design an IDE plugin to auto-suggest their safe alternatives. Applied to 140 buggy unsafe blocks from the RustSec Advisory Database, the plugin identifies and offers safe versions to remove the bug for 28.6\% of all cases.},
+booktitle = {Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {2032–2037},
+numpages = {6},
+keywords = {Rust Security, Software Engineering, Unsafe Code},
+location = {San Francisco, CA, USA},
+series = {ESEC/FSE 2023}
+}
+
+@inproceedings{Xrust,
+author = {Liu, Peiming and Zhao, Gang and Huang, Jeff},
+title = {Securing unsafe rust programs with XRust},
+year = {2020},
+isbn = {9781450371216},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3377811.3380325},
+doi = {10.1145/3377811.3380325},
+abstract = {Rust is a promising systems programming language that embraces both high-level memory safety and low-level resource manipulation. However, the dark side of Rust, unsafe Rust, leaves a large security hole as it bypasses the Rust type system in order to support low-level operations. Recently, several real-world memory corruption vulnerabilities have been discovered in Rust's standard libraries.We present XRust, a new technique that mitigates the security threat of unsafe Rust by ensuring the integrity of data flow from unsafe Rust code to safe Rust code. The cornerstone of XRust is a novel heap allocator that isolates the memory of unsafe Rust from that accessed only in safe Rust, and prevents any cross-region memory corruption. Our design of XRust supports both single-and multi-threaded Rust programs. Our extensive experiments on real-world Rust applications and standard libraries show that XRust is both highly efficient and effective in practice.},
+booktitle = {Proceedings of the ACM/IEEE 42nd International Conference on Software Engineering},
+pages = {234–245},
+numpages = {12},
+location = {Seoul, South Korea},
+series = {ICSE '20}
+
+@inproceedings{AutoVerify,
+author = {Rao, Zihao},
+title = {Semi-Automated Verification of Interior Unsafe Code Encapsulation in Real-World Rust Systems},
+year = {2024},
+isbn = {9798400712487},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3691620.3695373},
+doi = {10.1145/3691620.3695373},
+abstract = {Interior unsafe is an essential design paradigm advocated by the Rust community in system software development. However, there is little official guidance or few best practices regarding how to encapsulate unsafe code and achieve interior unsafe. To address this issue, this paper studies how interior unsafe is achieved in practice, aiming to identify best practices to guide Rust code design concerning unsafe code encapsulation. Specifically, we propose a novel unsafety isolation graph to model the essential usage and encapsulation of unsafe code. Based on the graph, we further propose four major isolation types and nine structural patterns to split a graph into several small self-contained subgraphs. These subgraphs can serve as useful audit units for examining the soundness of unsafe code encapsulation. We applied our approach to four real-world Rust projects. The experimental results demonstrate that our method is effective in characterizing their encapsulation code. Additionally, we identified three encapsulation patterns and two common issues in these projects that could complicate soundness verification or incur unsoundness issues.},
+booktitle = {Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering},
+pages = {2435–2437},
+numpages = {3},
+location = {Sacramento, CA, USA},
+series = {ASE '24}
+}
+
+@inproceedings{Achilles,
+author = {Cui, Mohan and Sun, Shuran and Xu, Hui and Zhou, Yangfan},
+title = {Is unsafe an Achilles' Heel? A Comprehensive Study of Safety Requirements in Unsafe Rust Programming},
+year = {2024},
+isbn = {9798400702174},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3597503.3639136},
+doi = {10.1145/3597503.3639136},
+abstract = {Rust is an emerging, strongly-typed programming language focusing on efficiency and memory safety. With increasing projects adopting Rust, knowing how to use Unsafe Rust is crucial for Rust security. We observed that the description of safety requirements needs to be unified in Unsafe Rust programming. Current unsafe API documents in the standard library exhibited variations, including inconsistency and insufficiency. To enhance Rust security, we suggest unsafe API documents to list systematic descriptions of safety requirements for users to follow.In this paper, we conducted the first comprehensive empirical study on safety requirements across unsafe boundaries. We studied unsafe API documents in the standard library and defined 19 safety properties (SP). We then completed the data labeling on 416 unsafe APIs while analyzing their correlation to find interpretable results. To validate the practical usability and SP coverage, we categorized existing Rust CVEs until 2023-07-08 and performed a statistical analysis of std unsafe API usage toward the crates.io ecosystem. In addition, we conducted a user survey to gain insights into four aspects from experienced Rust programmers. We finally received 50 valid responses and confirmed our classification with statistical significance.},
+booktitle = {Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},
+articleno = {106},
+numpages = {13},
+keywords = {unsafe rust, safety property, rustdoc, CVE, user survey, undefined behavior},
+location = {Lisbon, Portugal},
+series = {ICSE '24}
+}
+
+@article{RustCode,
+author = {Astrauskas, Vytautas and Matheja, Christoph and Poli, Federico and M\"{u}ller, Peter and Summers, Alexander J.},
+title = {How do programmers use unsafe rust?},
+year = {2020},
+issue_date = {November 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {4},
+number = {OOPSLA},
+url = {https://doi.org/10.1145/3428204},
+doi = {10.1145/3428204},
+abstract = {Rust’s ownership type system enforces a strict discipline on how memory locations are accessed and shared. This discipline allows the compiler to statically prevent memory errors, data races, inadvertent side effects through aliasing, and other errors that frequently occur in conventional imperative programs. However, the restrictions imposed by Rust’s type system make it difficult or impossible to implement certain designs, such as data structures that require aliasing (e.g. doubly-linked lists and shared caches). To work around this limitation, Rust allows code blocks to be declared as unsafe and thereby exempted from certain restrictions of the type system, for instance, to manipulate C-style raw pointers. Ensuring the safety of unsafe code is the responsibility of the programmer. However, an important assumption of the Rust language, which we dub the Rust hypothesis, is that programmers use Rust by following three main principles: use unsafe code sparingly, make it easy to review, and hide it behind a safe abstraction such that client code can be written in safe Rust. Understanding how Rust programmers use unsafe code and, in particular, whether the Rust hypothesis holds is essential for Rust developers and testers, language and library designers, as well as tool developers. This paper studies empirically how unsafe code is used in practice by analysing a large corpus of Rust projects to assess the validity of the Rust hypothesis and to classify the purpose of unsafe code. We identify queries that can be answered by automatically inspecting the program’s source code, its intermediate representation MIR, as well as type information provided by the Rust compiler; we complement the results by manual code inspection. Our study supports the Rust hypothesis partially: While most unsafe code is simple and well-encapsulated, unsafe features are used extensively, especially for interoperability with other languages.},
+journal = {Proc. ACM Program. Lang.},
+month = nov,
+articleno = {136},
+numpages = {27},
+keywords = {unsafe code, empirical study, Rust hypothesis, Rust}
+}
+
+@inproceedings{1Charm,
+author = {Almohri, Hussain M. J. and Evans, David},
+title = {Fidelius Charm: Isolating Unsafe Rust Code},
+year = {2018},
+isbn = {9781450356329},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3176258.3176330},
+doi = {10.1145/3176258.3176330},
+abstract = {The Rust programming language has a safe memory model that promises to eliminate critical memory bugs. While the language is strong in doing so, its memory guarantees are lost when any unsafe blocks are used. Unsafe code is often needed to call library functions written in an unsafe language inside a Rust program. We present Fidelius Charm (FC), a system that protects a programmer-specified subset of data in memory from unauthorized access through vulnerable unsafe libraries. FC does this by limiting access to the program's memory while executing unsafe libraries. FC uses standard features of Rust and utilizes the Linux kernel as a trusted base for splitting the address space into a trusted privileged region under the control of functions written in Rust and a region available to unsafe external libraries. This paper presents our design and implementation of FC, presents two case studies for using FC in Rust TLS libraries, and reports on experiments showing its performance overhead is low for typical uses.},
+booktitle = {Proceedings of the Eighth ACM Conference on Data and Application Security and Privacy},
+pages = {248–255},
+numpages = {8},
+keywords = {sandboxing, rust, isolation, compartmentalization},
+location = {Tempe, AZ, USA},
+series = {CODASPY '18}
+}
+
+@article{Featherweight,
+author = {Pearce, David J.},
+title = {A Lightweight Formalism for Reference Lifetimes and Borrowing in Rust},
+year = {2021},
+issue_date = {March 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {43},
+number = {1},
+issn = {0164-0925},
+url = {https://doi.org/10.1145/3443420},
+doi = {10.1145/3443420},
+abstract = {Rust is a relatively new programming language that has gained significant traction since its v1.0 release in 2015. Rust aims to be a systems language that competes with C/C++. A claimed advantage of Rust is a strong focus on memory safety without garbage collection. This is primarily achieved through two concepts, namely, reference lifetimes and borrowing. Both of these are well-known ideas stemming from the literature on region-based memory management and linearity/uniqueness. Rust brings both of these ideas together to form a coherent programming model. Furthermore, Rust has a strong focus on stack-allocated data and, like C/C++ but unlike Java, permits references to local variables.Type checking in Rust can be viewed as a two-phase process: First, a traditional type checker operates in a flow-insensitive fashion; second, a borrow checker enforces an ownership invariant using a flow-sensitive analysis. In this article, we present a lightweight formalism that captures these two phases using a flow-sensitive type system that enforces “type and borrow safety.” In particular, programs that are type and borrow safe will not attempt to dereference dangling pointers. Our calculus core captures many aspects of Rust, including copy- and move-semantics, mutable borrowing, reborrowing, partial moves, and lifetimes. In particular, it remains sufficiently lightweight to be easily digested and understood and, we argue, still captures the salient aspects of reference lifetimes and borrowing. Furthermore, extensions to the core can easily add more complex features (e.g., control-flow, tuples, method invocation). We provide a soundness proof to verify our key claims of the calculus. We also provide a reference implementation in Java with which we have model checked our calculus using over 500B input programs. We have also fuzz tested the Rust compiler using our calculus against 2B programs and, to date, found one confirmed compiler bug and several other possible issues.},
+journal = {ACM Trans. Program. Lang. Syst.},
+month = apr,
+articleno = {3},
+numpages = {73},
+keywords = {Rust, model checking, ownership, type theory}
+}
+
+@InProceedings{Terminate,
+author="Payet, {\'E}tienne
+and Pearce, David J.
+and Spoto, Fausto",
+editor="Deshmukh, Jyotirmoy V.
+and Havelund, Klaus
+and Perez, Ivan",
+title="On the Termination of Borrow Checking in Featherweight Rust",
+booktitle="NASA Formal Methods",
+year="2022",
+publisher="Springer International Publishing",
+address="Cham",
+pages="411--430",
+abstract="A distinguished feature of the Rust programming language is its ability to deallocate dynamically-allocated data structures as soon as they go out of scope, without relying on a garbage collector. At the same time, Rust lets programmers create references, called borrows, to data structures. A static borrow checker enforces that borrows can only be used in a controlled way, so that automatic deallocation does not introduce dangling references. Featherweight Rust provides a formalisation for a subset of Rust where borrow checking is encoded using flow typing [40]. However, we have identified a source of non-termination within the calculus which arises when typing environments contain cycles between variables. In fact, it turns out that well-typed programs cannot lead to such environments---but this was not immediately obvious from the presentation. This paper defines a simplification of Featherweight Rust, more amenable to formal proofs. Then it develops a sufficient condition that forbids cycles and, hence, guarantees termination. Furthermore, it proves that this condition is, in fact, maintained by Featherweight Rust for well-typed programs.",
+isbn="978-3-031-06773-0"
+}
+
